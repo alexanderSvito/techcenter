@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+	$( function() {
+	$( "#slider-range" ).slider({
+	  range: true,
+	  min: <%= @min %>,
+	  max: <%= @max %>,
+	  values: [ <%= @min %>, <%= @max %> ],
+	  slide: function( event, ui ) {
+	    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+	  }
+	});
+	$( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+	  " тг. - " + $( "#slider-range" ).slider( "values", 1 ) + " тг." );
+	});
+</script>
+<div>
+	<%= form_tag request.original_url, method: :get do %>
+		<p>
+		  <label for="amount">Диапазон:</label>
+		  <input type="text" name="range" id="amount" readonly style="border:0; color:#000000; font-weight:bold;">
+		</p>
+		<div id="slider-range"></div>
+		<br>
+		<%= submit_tag "Фильтровать", class: "btm btn-block btn-large btn-inverse" %>
+	<% end %>
+</div>

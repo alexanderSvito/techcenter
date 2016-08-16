@@ -1,0 +1,240 @@
+<br/><br/>
+
+<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-4">
+			<%= image_tag @avatar, class: "img-thumbnail"%>
+			<div>
+			<%= form_tag("#{item_url(@item.id)}/add", method: :post, class: "input-group") do |x| %>
+				<%= number_field :product, :quantity, in: 1..10, step: 1, class: "form-control", value: 1 %>
+				<span class="input-group-btn">
+				<%= submit_tag("Добавить в корзину", class: 'btn btn-danger') %>
+				</span>
+			<% end %>
+			<% if is_admin? %>
+			<div>
+				<button type="button" class="btn btn-inverse btn-block" data-toggle="modal" data-target="#myModal">
+					Редактировать
+				</button>
+			</div>
+			<% end %>
+			</div>
+	</div>
+
+	<div class="col-md-8">
+		<div class="text-left">
+			<h1>
+				<%= @item.name %> <br/>
+				<small><%= @item.group %></small>
+			</h1>
+		</div>
+			<% hash = hashify(@item.details) %>
+				<table class="table table-striped">
+					<% hash[hash.keys.first].each_pair do |k, v| %>
+					<tr>
+						<td>
+							<%= k %>
+						</td>
+						<td>
+							<%= v %>
+						</td>
+					</tr>
+					<% end %>
+				</table>
+		<br/><br/><br/>
+		<div>		
+		</div>
+	</div> 
+	
+	<div class="col-md-12">
+	<br><br>
+		<ul class="nav nav-tabs" id="myTabs" role="tablist">
+			<li role="presentation" class="active"><a href="#about" aria-controls="about" id="about-tab" role="tab" data-toggle="tab">Описание</a></li>
+			<li role="presentation"><a href="#info" aria-controls="info" id="info-tab" role="tab" data-toggle="tab">Характеристики</a></li>
+			<li role="presentation"><a href="#feed" aria-controls="feed" id="feed-tab" role="tab" data-toggle="tab">Отзывы</a></li>
+		</ul>
+		<div class="tab-content">
+			
+
+			<div role="tabpanel" class="tab-pane fade active in" id="about" aria-labelledby="about-tab">
+				<div class="panel">
+						<%= @item.description %>
+					
+				</div>
+				
+			</div>
+		
+			<div role="tabpanel" class="tab-pane fade" id="info" aria-labelledby="info-tab">
+				<% hash = hashify @item.details %>
+				<% hash.each_key do |t| %>
+				<table class="table table-striped">
+					<thead>
+						<th>
+							<%= t %>
+						</th>
+					</thead>
+					<% hash[t].each_pair do |k, v| %>
+					<tr>
+						<td>
+							<%= k %>
+						</td>
+						<td>
+							<%= v %>
+						</td>
+					</tr>
+					<% end %>
+				</table>
+				<% end %>
+			</div>
+
+
+			<div role="tabpanel" class="tab-pane fade" id="feed" aria-labelledby="feed-tab">
+				<% if logged_in? %>
+					<script src="https://use.fontawesome.com/476a805558.js"></script>
+					<div class="col-md-12 panel panel-default feed">
+					<h3>Оставить отзыв</h3>
+						<div class="col-md-2">
+							<%= image_tag current_user.avatar.url, class: "img-thumbnail" %>
+						</div>
+						<div class="col-md-10">
+						<%= form_tag "/feedback/#{@item.id}", method: :post do %>
+							<textarea class="form-control" name="review" rows="3" placeholder="Ваш отзыв"></textarea>
+							<br/>
+							<div>
+								<fieldset class="rating">
+								    <input type="radio" id="star5" name="rating" value="10" /><label class = "full" for="star5" title="Превосходно - 10"></label>
+								    <input type="radio" id="star4half" name="rating" value="9" /><label class="half" for="star4half" title="Отлично - 9"></label>
+								    <input type="radio" id="star4" name="rating" value="8" /><label class = "full" for="star4" title="Хорошо - 8"></label>
+								    <input type="radio" id="star3half" name="rating" value="7" /><label class="half" for="star3half" title="Неплохо - 7"></label>
+								    <input type="radio" id="star3" name="rating" value="6" /><label class = "full" for="star3" title="Удовлетворительно - 6"></label>
+								    <input type="radio" id="star2half" name="rating" value="5" /><label class="half" for="star2half" title="Средне - 5"></label>
+								    <input type="radio" id="star2" name="rating" value="4" /><label class = "full" for="star2" title="Терпимо - 4"></label>
+								    <input type="radio" id="star1half" name="rating" value="3" /><label class="half" for="star1half" title="Плохо - 3"></label>
+								    <input type="radio" id="star1" name="rating" value="2" /><label class = "full" for="star1" title="Ужасно - 2"></label>
+								    <input type="radio" id="starhalf" name="rating" value="1" /><label class="half" for="starhalf" title="Отвратительно - 1"></label>
+								</fieldset>
+							</div>
+							<div style="float: right;">
+								<%= submit_tag 'Отправить', class: "btn btn-inverse btn-large" %>
+							</div>
+
+						<% end %>
+						</div>
+						<br/>
+					</div>
+				<% end %>
+
+
+				<% @feed.each do |x| %>
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<%= x[:name] %>
+						</div>
+						<div class="panel-body">
+							<div class="col-md-2">
+								<%= image_tag x[:avatar] %>
+							</div>
+							<div class="col-md-10 well">
+								<%= x[:review] %>
+							</div>
+						</div>
+						<div class="panel-footer">
+							Оценка: <%= x[:rate] %>
+							<% if is_admin? %>
+							<%= link_to "Модерировать отзыв", "/feedback/#{x[:id]}/edit", style: "float: right;" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<% if is_admin? %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+		    <div class="modal-header">
+		    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   		 <h4 class="modal-title" id="myModalLabel">Редактирование</h4>
+		  	</div>
+			<div class="modal-body">			    	
+	    		<% path = "#{item_url(@item.id)}" %>
+	    		<%= form_tag path, multipart: true, role: :form, "data-toggle" => :validator, method: "patch" do %>
+				    	<div class="form-group">
+				    		<%= text_field_tag :name, @item.name %>
+				    	</div>
+				    	<div class="form-group">
+				    		<%= text_field_tag :price, @item.price %>
+				    	</div>
+				    	<div class="form-group">
+				    		<%= file_field_tag :avatar %>
+				    	</div>
+				    	<div class="form-group">
+							<select size="1" name="group">
+								<% if @item.group == "printer" %>
+							    	<option value="printer" selected>Принтер</option>
+							    <% else %>
+							    	<option value="printer">Принтер</option>
+							    <% end %>
+							    <% if @item.group == "scanner" %>
+							    	<option value="scanner" selected>Сканнер</option>
+							    <% else %>
+							    	<option value="scanner">Сканнер</option>
+							    <% end %>
+							    <% if @item.group == "mfu" %>
+							    	<option value="mfu" selected>МФУ</option>
+							    <% else %>
+							    	<option value="mfu">МФУ</option>
+							    <% end %>
+							    <% if @item.group == "shredder" %>
+							    	<option value="shredder" selected>Шредер</option>
+							    <% else %>
+							    	<option value="shredder">Шредер</option>
+							    <% end %>
+							    <% if @item.group == "paper" %>
+							    	<option value="paper" selected>Бумага</option>
+							    <% else %>
+							    	<option value="paper">Бумага</option>
+							    <% end %>
+							    <% if @item.group == "laminator" %>
+							    	<option value="laminator" selected>Ламинатор</option>
+							    <% else %>
+							    	<option value="laminator">Ламинатор</option>
+							    <% end %>
+							    <% if @item.group == "bookbinder" %>
+							    	<option value="bookbinder" selected>Переплётные машины</option>
+							    <% else %>
+							    	<option value="bookbinder">Переплётные машины</option>
+							    <% end %>
+							    <% if @item.group == "cartridge" %>
+							    	<option value="cartridge" selected>Картриджи</option>
+							    <% else %>
+							    	<option value="cartridge">Картриджи</option>
+							    <% end %>
+							    <% if @item.group == "other" %>
+							    	<option value="other" selected>Расходные материалы</option>
+							    <% else %>
+							    	<option value="other">Расходные материалы</option>
+							    <% end %>
+						    </select>
+						</div>
+						<div class="form-group">
+							<%= text_area_tag :description, @item.description, class: "form-control"  %>
+						</div>
+						<div class="form-group">
+							<%= text_area_tag :details, readable(@item.details), class: "form-control" %>
+						</div>
+						
+			        	<%= submit_tag("Подтвердить", class: 'btn btn-inverse btn-large btn-block') %>
+			    <% end %>
+	    		
+		    </div>
+		    <div class="modal-footer">
+		        <%= button_to('Удалить',"#{item_url(@item.id)}", method: "delete", class: 'btn btn-inverse btn-large btn-block') %>
+	      	</div>
+		</div>
+	</div>
+</div>
+<% end %>

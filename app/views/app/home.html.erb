@@ -1,0 +1,41 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<%= render 'layouts/navbar' %>
+		</div>
+		<div class="col-xs-12 col-md-9">
+		<div class="text-center"><h2>Рекомендованное</h2></div>
+		<% @top.each do |x| %>
+			<a href="/item/<%= x[:id] %>">
+				<figure class="col-xs-6 col-md-3">
+					<figcaption><%= x[:name] %><br/><%= x[:price] %> тенге</figcaption>
+					<%= image_tag x[:link] %>
+					<figcaption><%= x[:rate] %>/10</figcaption>
+				</figure>
+			</a>
+		<% end %>
+		<div class="text-center"><h2>Дешёвые</h2></div>
+		<% @cheap.each do |x| %>
+			<a href="/item/<%= x[:id] %>">
+				<figure class="col-xs-6 col-md-3">
+					<figcaption><%= x[:name] %><br/><%= x[:price] %> тенге</figcaption>
+					<%= image_tag x[:link] %>
+					<figcaption><%= x[:rate] %>/10</figcaption>
+				</figure>
+			</a>
+		<% end %>
+		<br>
+		<div class="text-center"><h2>Крутые</h2></div>
+		<% @visited.each do |x| %>
+			<a href="/item/<%= x[:id] %>">
+				<figure class="col-xs-6 col-md-3">
+					<figcaption><%= x[:name] %><br/><%= x[:price] %> тенге</figcaption>
+					<%= image_tag x[:link] %>
+					<figcaption><%= x[:rate] %>/10</figcaption>
+				</figure>
+			</a>
+		<% end %>
+		</div>
+	</div>
+</div>

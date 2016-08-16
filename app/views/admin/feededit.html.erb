@@ -1,0 +1,18 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Модерирование отзыва
+		</div>
+		<div class="panel-body">
+			<%= form_tag "/feedback/#{@feed.id}", method: :patch do %>
+				<div class="form-group">
+					<%= text_area_tag :review, @feed.review, class: "form-control" %>
+				</div>
+				<%= submit_tag "Подтвердить", class: "btn btn-block btn-inverse" %>
+				
+			<% end %>
+			<%= button_to "Удалить", "/feedback/#{@feed.id}", method: :delete, class: "btn btn-block btn-inverse" %>
+		</div>
+	</div>
+
+</div>

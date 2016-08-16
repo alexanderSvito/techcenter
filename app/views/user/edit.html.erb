@@ -1,0 +1,77 @@
+<br/><br/>
+<div class="col-md-4 col-md-offset-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Редактирование профиля</h3>
+    </div>
+    <div class="panel-body">
+      <script src="https://use.fontawesome.com/476a805558.js"></script>
+      <%= render 'layouts/error_msg' %>
+      <% if @error %>
+        <div class="alert alert-danger">
+          <%= @error %>
+        </div>
+      <% end %>
+      <%= form_for "user", html: { multipart: true }, role: :form, "data-toggle" => :validator, method: :patch do |f| %>
+        <%= render 'layouts/error_msg' %>
+        <%= text_field_tag :name, @user.name, class: 'form-control', placeholder: "Новое имя" %>
+        <%= email_field_tag :email, @user.email, class: 'form-control', placeholder: "Новая почта" %>
+        <div class="form-group">
+          <%= file_field_tag :avatar %>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="address" name="defaults"><label for="address">Ввести адресс</label>
+        </div>
+        <div id="addressF">
+          <%= render 'layouts/address' %>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="number" name="defaults"><label for="number">Ввести номер</label>
+        </div> 
+        <div id="numberF">
+          <%= render 'layouts/number' %>
+        </div> 
+        <div class="checkbox">
+          <input type="checkbox" id="password" name="defaults"><label for="password">Ввести новый пароль</label>
+        </div> 
+        <div id="passwordF">
+          <%= f.password_field :password, class: 'form-control', placeholder: "Новый пароль" %>
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Повторите пароль" %>
+        </div> 
+        
+        <div class="alert alert-info">Введите старый пароль для подтверждения изменений</div>
+        <%= f.password_field :password_old, class: 'form-control', placeholder: "Старый пароль" %>
+
+        <%= f.submit "Сохранить изменения", class: "btn btn-large btn-inverse btn-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+      $("#addressF").hide();
+      $("#numberF").hide();
+      $("#passwordF").hide();
+      $("#address").click(function(){
+        if ($("#address").is(':checked')) {
+          $("#addressF").show(200);
+        } else {
+          $("#addressF").hide(200);
+        }  
+      });
+      $("#number").click(function(){
+        if ($("#number").is(':checked')) {
+          $("#numberF").show(200);
+        } else {
+          $("#numberF").hide(200);
+        }  
+      });
+      $("#password").click(function(){
+        if ($("#password").is(':checked')) {
+          $("#passwordF").show(200);
+        } else {
+          $("#passwordF").hide(200);
+        }  
+      });
+  });
+</script>

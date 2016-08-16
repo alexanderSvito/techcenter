@@ -1,0 +1,86 @@
+<br/><br/>
+<div class="col-md-3">
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h3 class="panel-title"><%= @data[:name] %></h3>
+	    </div>
+		<div class="panel-body">
+			<%= image_tag @data[:avatar], class: "img-thumbnail"%>
+			<ul>
+				<li>
+					Email: <%= @data[:email] %>
+				</li>
+				<li>
+					Адрес: <%= @user[:address] %>
+				</li>
+				<li>
+					Телефонный номер: <%= format_phone @user[:number] if !@user[:number].nil? %>
+				</li>
+			</ul>
+			<div class="form-group">
+				<%= button_to('Редактировать', {action: "edit", id: @user.id}, {class: 'btn btn-large btn-inverse btn-block', method: :get}) %>
+				<%= button_to('Выйти', "/logout" , {class: 'btn btn-large btn-inverse btn-block', method: :delete}) %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-9">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<% @data[:orders].each_key do |x| %>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= x %>" aria-expanded="true" aria-controls="collapse">
+	          Заказ №<%= x %>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapse<%= x %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading">
+	      <div class="panel-body">
+	        <table class="table table-striped">
+				<thead>
+				    <tr>
+						<th>#</th>
+						<th>Имя</th>
+						<th>Количество</th>
+						<th>Добавлен</th>
+						<th>Цена</th>
+				    </tr>
+				</thead>
+				<% i = 0 %>
+				<tbody>
+					<% @data[:orders][x][:goods].each_key do |f| %>
+						<tr>
+							<td>
+								<%= i+=1 %>
+							</td>
+							<td>
+								<%= @data[:orders][x][:goods][f][:data][:name] %>
+							</td>
+							<td>
+								<%= @data[:orders][x][:goods][f][:count] %> 
+							</td>
+							<td>
+								<%= @data[:orders][x][:goods][f][:data][:updated_at] %> 
+							</td>
+							<td>
+								<%= @data[:orders][x][:goods][f][:data][:price] %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4">Итого</td>
+						<td><%= @data[:orders][x][:total] %></td>
+					</tr>
+				</tfoot>
+			</table>
+	      </div>
+	    </div>
+	  </div>
+	  <% end %>
+	 </div>
+	
+</div> 

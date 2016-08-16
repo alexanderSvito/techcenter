@@ -1,0 +1,122 @@
+<div>
+	<br>
+	<div>
+		<button type="button" class="btn btn-inverse btn-block" data-toggle="modal" data-target="#myModal">
+			Добавить товар
+		</button>
+	</div>
+	<br>
+	<% @orders.each_key do |x| %>
+	<div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= x %>" aria-expanded="true" aria-controls="collapse">
+	          Заказ №<%= x %>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapse<%= x %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading">
+	    	<% a = @orders[x].keys.first %>
+		    <div class="panel-body">
+		    <div class="well">
+			    	Адрес: <%= @orders[x][a][:address] %><br/>Телефон: <%= format_phone @orders[x][a][:number] if !@orders[x][a][:number].nil?  %>
+			    </div>
+		    
+			    
+			    <table class="table table-striped">
+					<thead>
+					    <tr>
+							<th>#</th>
+							<th>Имя</th>
+							<th>Количество</th>
+							<th>Добавлен</th>
+							<th>Цена</th>
+					    </tr>
+					</thead>
+					<% i = 0 %>
+					<tbody>
+						<% @orders[x].each_key do |f| %>
+							<tr>
+								<td>
+									<%= i+=1 %>
+								</td>
+								<td>
+									<%= @orders[x][f][:name] %>
+								</td>
+								<td>
+									<%= @orders[x][f][:count] %> 
+								</td>
+								<td>
+									<%= @orders[x][f][:updated_at] %> 
+								</td>
+								<td>
+									<%= @orders[x][f][:price] %>
+								</td>
+							</tr>
+						<% end %>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="4">Итого</td>
+							<td><%= @orders[x][a][:total] %></td>
+						</tr>
+					</tfoot>
+				</table>
+			
+		    </div>
+	    </div>
+	</div>
+	<% end %>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+		    <div class="modal-header">
+		    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   		 <h4 class="modal-title" id="myModalLabel">Редактирование</h4>
+		  	</div>
+		  	<%= form_tag "/item", multipart: true, role: :form, "data-toggle" => :validator, method: "post" do %>
+			<div class="modal-body">
+		    	<div class="form-group">
+		    		<%= text_field_tag :name, nil, placeholder: "Имя товара" %>
+		    	</div>
+		    	<div class="form-group">
+		    		<%= text_field_tag :price, nil, placeholder: "Цена товара" %>
+		    	</div>
+		    	<div class="text-left">
+		    		Выберите аватарку (прозрачный фон, png)
+		    	</div>
+		    	<div class="form-group">
+		    		<%= file_field_tag :avatar %>
+		    	</div>
+		    	<div class="text-left">
+		    		Выберите тип товара
+		    	</div>
+		    	<div class="form-group">
+					<select size="1" name="group">
+					    <option value="printer">Принтер</option>
+						<option value="scanner">Сканнер</option>
+					    <option value="mfu">МФУ</option>
+					    <option value="shredder">Шредер</option>	 
+					    <option value="paper">Бумага</option>
+					    <option value="laminator">Ламинатор</option>
+					    <option value="bookbinder">Переплётные машины</option>
+					    <option value="cartridge">Картриджи</option>
+					    <option value="other">Расходные материалы</option>
+				    </select>
+				</div>
+				<div class="form-group">
+					<%= text_area_tag :description, nil, placeholder: "Введите описание товара", class: "form-control"  %>
+				</div>
+				<div class="form-group">
+					<%= text_area_tag :details, nil, placeholder: "Введите характеристики товара", class: "form-control" %>
+				</div>		   
+	        </div>    		
+		    <div class="modal-footer">
+        		<%= submit_tag("Создать", class: 'btn btn-inverse btn-large btn-block') %>
+        	</div>
+        	<% end %>   
+		</div>
+	</div>
+</div>

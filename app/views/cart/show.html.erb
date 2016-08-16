@@ -1,0 +1,154 @@
+<br/><br/>
+<% if @goods.empty? %>
+	<div class="alert alert-info">
+		Вы ничего пока не заказали
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<% else %>
+<div class="col-md-10 col-md-offset-1">
+	<%= @bool %>
+	<div class="panel panel-default">
+		<div class="panel-heading">Заказ №<%= @cart.id %></div>
+		<div class="panel-body">
+				Информация о заказе
+		</div>
+		<table class="table table-striped">
+			<thead>
+			    <tr>
+					<th>#</th>
+					<th>Имя</th>
+					<th>Количество</th>
+					<th>Цена</th>
+					<th></th>
+			    </tr>
+			</thead>
+			<% i = 0 %>
+			<tbody>
+				<% @goods.each do |f| %>
+					<tr>
+						<td>
+							<%= i+=1 %>
+						</td>
+						<td>
+							<%= f.name %>
+						</td>
+						<td>
+							<div class="row">
+								<div class="col-md-1">
+									<%= button_to('-', "/cart_item/#{f.item_id}",method: "delete", class: "btn-link", form_class: "small") %>
+								</div>
+								
+								<div class="col-md-1">
+									<%= @count[f.item_id] %>
+								</div>
+								
+								<div class="col-md-1">
+									<%= button_to('+', "/cart_item/#{f.item_id}",method: "post", class: "btn-link", form_class: "small") %>
+								</div>
+								
+							</div>
+						</td>
+						<td>
+							<%= f.price %>
+						</td>
+						<td>
+							<%= button_to('удалить', "/cart_items/#{f.item_id}",method: "delete", class: "btn-link btn-block", form_class: "small float") %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">Итого</td>
+					<td><%= @cart.estimate %></td>
+					<td></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div>
+		<button type="button" class="btn btn-inverse btn-block btn-large" data-toggle="modal" data-target="#myModal">
+		  Заказать
+		</button>
+		<br><br><br><br><br>
+
+	</div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<script src="https://use.fontawesome.com/476a805558.js"></script>
+	<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+		    <div class="modal-header">
+		    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   		 <h4 class="modal-title" id="myModalLabel">Подвтерждение заказа</h4>
+		  	</div>
+	    	<%= form_tag "#{cart_url(@cart.id)}/process", role: :form, "data-toggle" => :validator, method: "post" do %>
+			<div class="modal-body">
+		    		<% if has_data? %>
+						<div class="checkbox">
+							<input type="hidden" name="defaults" value="0">
+							<input type="checkbox" id="def" name="defaults" value="1"><label for="def">Использовать мои данные</label>
+						</div>
+					<% end %>
+						<div class="checkbox">
+							<input type="hidden" name="self" value="0">
+							<input type="checkbox" id="self" name="self" value="1"><label for="self">Самовывоз</label>
+						</div> 
+				    	<div id="numberId">
+				      		<%= render 'layouts/number' %>
+				    	</div>
+			        	<div id="addressId">
+			          		<%= render 'layouts/address' %>
+			        	</div>
+			        	<div class="well" id="info">
+			          		Выбирая опцию самовывоза, свяжитесь с менеджером для уточнения времени.
+			        	</div>  			        	
+		    </div>
+		    <div class="modal-footer">
+	    		<%= submit_tag("Подтвердить", class: 'btn btn-inverse btn-large btn-block') %>
+	    	</div>
+	    	<% end %>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$("#info").hide();
+	    $("#def").click(function(){
+	    	if ($("#def").is(':checked')) {
+	    		$("#numberId").hide(200);
+	    		$("#addressId").hide(200);
+	    		$("#self").is(':checked') ? $("#info").show(200) : $("#info").hide(200);
+	    	} else {
+	    		$("#numberId").show(200);
+	    		if ($("#self").is(':checked')) {
+	    			$("#addressId").hide(200);
+	    			$("#info").show(200);
+	    		} else {
+	    			$("#addressId").show(200);
+	    			$("#info").hide(200);
+	    		}
+	    	}  
+	    });
+	    $("#self").click(function(){
+	    	if ($("#self").is(':checked')) {
+	    		$("#addressId").hide(200);
+	    		$("#info").show(200);
+	    		$("#def").is(':checked') ? $("#numberId").hide(200) : $("#numberId").show(200);
+	    	} else {
+	    		$("#info").hide(200);
+	    		if ($("#def").is(':checked')) {
+	    			$("#numberId").hide(200);
+	    			$("#addressId").hide(200);
+	    		} else {
+	    			$("#numberId").show(200);
+	    			$("#addressId").show(200);
+	    		}
+	    	}  
+	    });
+	});
+</script>
+<% end %>

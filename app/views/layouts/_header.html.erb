@@ -1,0 +1,45 @@
+<header class="black">
+	<div class="container flexible-header">
+		<div><a href="/"><%= image_tag "logo.png" %></a></div>
+		<div style="margin-top: 1em;" class="row">
+			<form class="form-search" action="/search">
+				<div class="input-prepend">
+					<button type="submit" class="btn"><%= image_tag "search.png", size: "15x15" %></button>
+					<input type="text" class="sfield search-query" placeholder="Поиск" name="req">
+				</div>
+			</form>
+		</div>
+		<div class="hidden-xs hidden-sm">
+		<% if logged_in? %>
+				<%= link_to cart_url(cookies.permanent[:log_cart]), class: "header" do %>
+					<div class="header">
+						В корзине&nbsp&nbsp
+						<span class="badge badge-warning"><%= CartItem.where(cart_id: cookies.permanent[:log_cart]).count %></span>
+						&nbsp
+					    <%= image_tag('cart.png') %>
+					</div>
+				<% end %>		
+		<% else %>
+			<%= link_to cart_url(cookies.permanent[:stgr_cart]), class: "header" do %>
+					<div class="header">
+						В корзине&nbsp&nbsp
+						<span class="badge"><%= CartItem.where(cart_id: cookies.permanent[:stgr_cart]).count %></span>
+						&nbsp
+					    <%= image_tag('cart.png') %>
+					  
+					</div>
+				<% end %>
+		<% end %>
+		</div>
+		<a href="/help" class="header"><div class="hidden-xs hidden-sm header">Помощь&nbsp<%= image_tag "help.png" %></div></a>
+		<% if logged_in? %>
+			<%= link_to user_url(current_user), class: "header" do %>
+				<div class="hidden-xs hidden-sm header">
+			    <%= current_user.name %>&nbsp<%= image_tag('user.png') %>
+			    </div>
+			<% end %>
+		<% else %>
+			<a href="/login" class="header"><div class="hidden-xs hidden-sm header">Логин&nbsp&nbsp<%= image_tag "user.png" %></div></a>
+		<% end %>
+	</div>
+</header>

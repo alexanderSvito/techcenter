@@ -1,0 +1,325 @@
+# Logfile created on 2016-08-17 00:57:41 +0500 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 00:57:41 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [07196e52] Running [ -d $HOME/.rbenv/versions/2.0.0-p451 ] as admin@tcshop.kz
+ DEBUG [07196e52] Command: [ -d $HOME/.rbenv/versions/2.0.0-p451 ]
+ DEBUG [4ef97653] Running [ -d $HOME/.rbenv/versions/2.0.0-p451 ] as deploy@example.com
+ DEBUG [4ef97653] Command: [ -d $HOME/.rbenv/versions/2.0.0-p451 ]
+ DEBUG [07196e52] Finished in 8.143 seconds with exit status 1 (failed).
+ ERROR rbenv: 2.0.0-p451 is not installed or not found in $HOME/.rbenv/versions/2.0.0-p451
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 00:59:29 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [5cf55831] Running [ -d $HOME/.rbenv/versions/1.0.0-30-g0c7224a ] as deploy@example.com
+ DEBUG [5cf55831] Command: [ -d $HOME/.rbenv/versions/1.0.0-30-g0c7224a ]
+ DEBUG [33ca1a0e] Running [ -d $HOME/.rbenv/versions/1.0.0-30-g0c7224a ] as admin@tcshop.kz
+ DEBUG [33ca1a0e] Command: [ -d $HOME/.rbenv/versions/1.0.0-30-g0c7224a ]
+ DEBUG [33ca1a0e] Finished in 2.861 seconds with exit status 1 (failed).
+ ERROR rbenv: 1.0.0-30-g0c7224a is not installed or not found in $HOME/.rbenv/versions/1.0.0-30-g0c7224a
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:00:53 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [c4577e7b] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [c4577e7b] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [38bba594] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [38bba594] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [38bba594] Finished in 1.999 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:06:08 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [74b65f26] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [74b65f26] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [53099de4] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@95.59.26.54
+ DEBUG [53099de4] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [53099de4] Finished in 14.041 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:09:19 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [322eb9bf] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [322eb9bf] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [815291d4] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [815291d4] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [322eb9bf] Finished in 25.226 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:14:06 +0500 cap production git:wrapper
+  INFO ---------------------------------------------------------------------------
+ DEBUG [a64d0c49] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [a64d0c49] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [64e9b6af] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [64e9b6af] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [64e9b6af] Finished in 4.724 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:19:06 +0500 cap production git:wrapper
+  INFO ---------------------------------------------------------------------------
+ DEBUG [369baa08] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [369baa08] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [fe5038fc] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as root@tcshop.kz
+ DEBUG [fe5038fc] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [fe5038fc] Finished in 8.734 seconds with exit status 1 (failed).
+ ERROR rbenv: 2.3.1 is not installed or not found in $HOME/.rbenv/versions/2.3.1
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:20:03 +0500 cap production git:wrapper
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e6f79ca5] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [e6f79ca5] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [365d007e] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [365d007e] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [365d007e] Finished in 74.142 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:34:29 +0500 cap production git:wrapper
+  INFO ---------------------------------------------------------------------------
+ DEBUG [44a05f9d] Running [ -d $HOME/.rbenv/versions/2.0.0-p451 ] as deploy@example.com
+ DEBUG [44a05f9d] Command: [ -d $HOME/.rbenv/versions/2.0.0-p451 ]
+ DEBUG [230ba1c5] Running [ -d $HOME/.rbenv/versions/2.0.0-p451 ] as admin@tcshop.kz
+ DEBUG [230ba1c5] Command: [ -d $HOME/.rbenv/versions/2.0.0-p451 ]
+ DEBUG [230ba1c5] Finished in 4.206 seconds with exit status 1 (failed).
+ ERROR rbenv: 2.0.0-p451 is not installed or not found in $HOME/.rbenv/versions/2.0.0-p451
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:38:07 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [97af7d80] Running [ -d $HOME/.rbenv/versions/2.3.1p112 ] as deploy@example.com
+ DEBUG [97af7d80] Command: [ -d $HOME/.rbenv/versions/2.3.1p112 ]
+ DEBUG [60ff6ae5] Running [ -d $HOME/.rbenv/versions/2.3.1p112 ] as admin@tcshop.kz
+ DEBUG [60ff6ae5] Command: [ -d $HOME/.rbenv/versions/2.3.1p112 ]
+ DEBUG [60ff6ae5] Finished in 3.011 seconds with exit status 1 (failed).
+ ERROR rbenv: 2.3.1p112 is not installed or not found in $HOME/.rbenv/versions/2.3.1p112
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:38:49 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8f21334d] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [8f21334d] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [3e4c74f6] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [3e4c74f6] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [8f21334d] Finished in 2.323 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:43:18 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [abacdc23] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [abacdc23] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [82548661] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [82548661] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [abacdc23] Finished in 2.816 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:51:19 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [48a4ef90] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@95.59.26.54
+ DEBUG [48a4ef90] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [0d12b0f1] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@example.com
+ DEBUG [0d12b0f1] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [48a4ef90] Finished in 4.445 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 01:56:38 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [b58b6374] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [b58b6374] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [9b4d019c] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@95.59.26.54
+ DEBUG [9b4d019c] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [b58b6374] Finished in 2.459 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 02:19:57 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [6382c5f2] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@tcshop.kz
+ DEBUG [6382c5f2] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [e5e7c52c] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as admin@95.59.26.54
+ DEBUG [e5e7c52c] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [6382c5f2] Finished in 3.285 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 02:56:35 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [b8f4dea1] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [b8f4dea1] Command: [ -d ~/.rvm ]
+ DEBUG [ba2573b2] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [ba2573b2] Command: [ -d ~/.rvm ]
+ DEBUG [b8f4dea1] Finished in 6.362 seconds with exit status 0 (successful).
+ DEBUG [ba2573b2] Finished in 37.016 seconds with exit status 0 (successful).
+ DEBUG [29951953] Running ~/.rvm/bin/rvm version as admin@tcshop.kz
+ DEBUG [29951953] Command: ~/.rvm/bin/rvm version
+ DEBUG [8cbd02d7] Running ~/.rvm/bin/rvm version as admin@95.59.26.54
+ DEBUG [8cbd02d7] Command: ~/.rvm/bin/rvm version
+ DEBUG [8cbd02d7] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [8cbd02d7] Finished in 45.194 seconds with exit status 0 (successful).
+ DEBUG [e4b585c6] Running ~/.rvm/bin/rvm current as admin@95.59.26.54
+ DEBUG [e4b585c6] Command: ~/.rvm/bin/rvm current
+ DEBUG [e4b585c6] 	ruby-2.3.1
+ DEBUG [e4b585c6] Finished in 0.445 seconds with exit status 0 (successful).
+ DEBUG [c845bfa4] Running ~/.rvm/bin/rvm default do ruby --version as admin@95.59.26.54
+ DEBUG [c845bfa4] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [c845bfa4] 	ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+ DEBUG [c845bfa4] Finished in 0.674 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:01:08 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [877a6437] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [877a6437] Command: [ -d ~/.rvm ]
+ DEBUG [f7bccd77] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [f7bccd77] Command: [ -d ~/.rvm ]
+ DEBUG [f7bccd77] Finished in 9.877 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:05:42 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3f7d165f] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [3f7d165f] Command: [ -d ~/.rvm ]
+ DEBUG [a295ac55] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [a295ac55] Command: [ -d ~/.rvm ]
+ DEBUG [3f7d165f] Finished in 9.410 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:06:18 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [95f082da] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [95f082da] Command: [ -d ~/.rvm ]
+ DEBUG [9a10fd02] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [9a10fd02] Command: [ -d ~/.rvm ]
+ DEBUG [9a10fd02] Finished in 9.647 seconds with exit status 0 (successful).
+ DEBUG [95f082da] Finished in 19.404 seconds with exit status 0 (successful).
+ DEBUG [34d2d3b9] Running ~/.rvm/bin/rvm version as admin@95.59.26.54
+ DEBUG [34d2d3b9] Command: ~/.rvm/bin/rvm version
+ DEBUG [5bb1085c] Running ~/.rvm/bin/rvm version as admin@tcshop.kz
+ DEBUG [5bb1085c] Command: ~/.rvm/bin/rvm version
+ DEBUG [5bb1085c] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [5bb1085c] Finished in 39.369 seconds with exit status 0 (successful).
+ DEBUG [e5150eb3] Running ~/.rvm/bin/rvm current as admin@tcshop.kz
+ DEBUG [e5150eb3] Command: ~/.rvm/bin/rvm current
+ DEBUG [e5150eb3] 	ruby-2.3.1
+ DEBUG [e5150eb3] Finished in 76.778 seconds with exit status 0 (successful).
+ DEBUG [80d9150c] Running ~/.rvm/bin/rvm default do ruby --version as admin@tcshop.kz
+ DEBUG [80d9150c] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [80d9150c] 	ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+ DEBUG [80d9150c] Finished in 0.534 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:10:15 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [64a424b5] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [64a424b5] Command: [ -d ~/.rvm ]
+ DEBUG [94292afe] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [94292afe] Command: [ -d ~/.rvm ]
+ DEBUG [94292afe] Finished in 21.966 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:12:08 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [45b2a5bb] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [45b2a5bb] Command: [ -d ~/.rvm ]
+ DEBUG [78f670f8] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [78f670f8] Command: [ -d ~/.rvm ]
+ DEBUG [78f670f8] Finished in 8.176 seconds with exit status 0 (successful).
+ DEBUG [45b2a5bb] Finished in 12.044 seconds with exit status 0 (successful).
+ DEBUG [84de4e91] Running ~/.rvm/bin/rvm version as admin@95.59.26.54
+ DEBUG [b713d529] Running ~/.rvm/bin/rvm version as admin@tcshop.kz
+ DEBUG [84de4e91] Command: ~/.rvm/bin/rvm version
+ DEBUG [b713d529] Command: ~/.rvm/bin/rvm version
+ DEBUG [84de4e91] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [84de4e91] Finished in 4.685 seconds with exit status 0 (successful).
+ DEBUG [610271bf] Running ~/.rvm/bin/rvm current as admin@95.59.26.54
+ DEBUG [610271bf] Command: ~/.rvm/bin/rvm current
+ DEBUG [b713d529] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [b713d529] Finished in 7.712 seconds with exit status 0 (successful).
+ DEBUG [dd3fc0ea] Running ~/.rvm/bin/rvm current as admin@tcshop.kz
+ DEBUG [dd3fc0ea] Command: ~/.rvm/bin/rvm current
+ DEBUG [610271bf] 	ruby-2.3.1
+ DEBUG [610271bf] Finished in 4.684 seconds with exit status 0 (successful).
+ DEBUG [1d909ac8] Running ~/.rvm/bin/rvm default do ruby --version as admin@95.59.26.54
+ DEBUG [1d909ac8] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [1d909ac8] 	ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+ DEBUG [1d909ac8] Finished in 0.706 seconds with exit status 0 (successful).
+ DEBUG [dd3fc0ea] 	ruby-2.3.1
+ DEBUG [dd3fc0ea] Finished in 9.987 seconds with exit status 0 (successful).
+ DEBUG [867b31e2] Running ~/.rvm/bin/rvm default do ruby --version as admin@tcshop.kz
+ DEBUG [867b31e2] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [867b31e2] 	ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+ DEBUG [867b31e2] Finished in 0.572 seconds with exit status 0 (successful).
+  INFO [335a3f71] Running /usr/bin/env mkdir -p /tmp/techcenter/ as admin@95.59.26.54
+  INFO [b5e31a43] Running /usr/bin/env mkdir -p /tmp/techcenter/ as admin@tcshop.kz
+ DEBUG [335a3f71] Command: /usr/bin/env mkdir -p /tmp/techcenter/
+ DEBUG [b5e31a43] Command: /usr/bin/env mkdir -p /tmp/techcenter/
+  INFO [b5e31a43] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [335a3f71] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/techcenter/git-ssh.sh 0.0%
+ DEBUG Uploading /tmp/techcenter/git-ssh.sh 0.0%
+  INFO Uploading /tmp/techcenter/git-ssh.sh 100.0%
+  INFO Uploading /tmp/techcenter/git-ssh.sh 100.0%
+  INFO [b4634ea2] Running /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh as admin@tcshop.kz
+ DEBUG [b4634ea2] Command: /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh
+  INFO [3d8855aa] Running /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh as admin@95.59.26.54
+ DEBUG [3d8855aa] Command: /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh
+  INFO [b4634ea2] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [3d8855aa] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [b37d74ca] Running /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter.git as admin@tcshop.kz
+ DEBUG [b37d74ca] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/techcenter/git-ssh.sh" ; /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter.git )
+  INFO [f7113877] Running /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter.git as admin@95.59.26.54
+ DEBUG [f7113877] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/techcenter/git-ssh.sh" ; /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter.git )
+ DEBUG [b37d74ca] 	Permission denied (publickey,password).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:21:08 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3e98e795] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [3e98e795] Command: [ -d ~/.rvm ]
+ DEBUG [e3b3c302] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [e3b3c302] Command: [ -d ~/.rvm ]
+ DEBUG [3e98e795] Finished in 3.041 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-17 03:21:19 +0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d614c776] Running [ -d ~/.rvm ] as admin@95.59.26.54
+ DEBUG [d614c776] Command: [ -d ~/.rvm ]
+ DEBUG [9843595e] Running [ -d ~/.rvm ] as admin@tcshop.kz
+ DEBUG [9843595e] Command: [ -d ~/.rvm ]
+ DEBUG [9843595e] Finished in 1.076 seconds with exit status 0 (successful).
+ DEBUG [d614c776] Finished in 2.149 seconds with exit status 0 (successful).
+ DEBUG [25d54646] Running ~/.rvm/bin/rvm version as admin@95.59.26.54
+ DEBUG [25d54646] Command: ~/.rvm/bin/rvm version
+ DEBUG [2e853b55] Running ~/.rvm/bin/rvm version as admin@tcshop.kz
+ DEBUG [2e853b55] Command: ~/.rvm/bin/rvm version
+ DEBUG [25d54646] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [25d54646] Finished in 3.261 seconds with exit status 0 (successful).
+ DEBUG [4439b7a3] Running ~/.rvm/bin/rvm current as admin@95.59.26.54
+ DEBUG [4439b7a3] Command: ~/.rvm/bin/rvm current
+ DEBUG [2e853b55] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [2e853b55] Finished in 6.359 seconds with exit status 0 (successful).
+ DEBUG [00ddb27c] Running ~/.rvm/bin/rvm current as admin@tcshop.kz
+ DEBUG [00ddb27c] Command: ~/.rvm/bin/rvm current
+ DEBUG [4439b7a3] 	ruby-2.3.1
+ DEBUG [4439b7a3] Finished in 5.501 seconds with exit status 0 (successful).
+ DEBUG [66d82600] Running ~/.rvm/bin/rvm default do ruby --version as admin@95.59.26.54
+ DEBUG [66d82600] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [66d82600] 	ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+ DEBUG [66d82600] Finished in 0.604 seconds with exit status 0 (successful).
+ DEBUG [00ddb27c] 	ruby-2.3.1
+ DEBUG [00ddb27c] Finished in 7.494 seconds with exit status 0 (successful).
+ DEBUG [d323d48f] Running ~/.rvm/bin/rvm default do ruby --version as admin@tcshop.kz
+ DEBUG [d323d48f] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [d323d48f] 	ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+ DEBUG [d323d48f] Finished in 0.524 seconds with exit status 0 (successful).
+  INFO [0b073e00] Running /usr/bin/env mkdir -p /tmp/techcenter/ as admin@tcshop.kz
+ DEBUG [0b073e00] Command: /usr/bin/env mkdir -p /tmp/techcenter/
+  INFO [84b0583d] Running /usr/bin/env mkdir -p /tmp/techcenter/ as admin@95.59.26.54
+ DEBUG [84b0583d] Command: /usr/bin/env mkdir -p /tmp/techcenter/
+  INFO [0b073e00] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [84b0583d] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/techcenter/git-ssh.sh 0.0%
+  INFO Uploading /tmp/techcenter/git-ssh.sh 100.0%
+ DEBUG Uploading /tmp/techcenter/git-ssh.sh 0.0%
+  INFO Uploading /tmp/techcenter/git-ssh.sh 100.0%
+  INFO [078d4abc] Running /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh as admin@95.59.26.54
+  INFO [5894bd48] Running /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh as admin@tcshop.kz
+ DEBUG [078d4abc] Command: /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh
+ DEBUG [5894bd48] Command: /usr/bin/env chmod +rx /tmp/techcenter/git-ssh.sh
+  INFO [078d4abc] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [5894bd48] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [6a7ea171] Running /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter/.git as admin@95.59.26.54
+ DEBUG [6a7ea171] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/techcenter/git-ssh.sh" ; /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter/.git )
+  INFO [05c5003c] Running /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter/.git as admin@tcshop.kz
+ DEBUG [05c5003c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/techcenter/git-ssh.sh" ; /usr/bin/env git ls-remote --heads admin@tcshop.kz:/home/admin/techcenter/.git )
+ DEBUG [6a7ea171] 	Permission denied (publickey,password).
+ DEBUG [6a7ea171] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ DEBUG [05c5003c] 	Permission denied (publickey,password).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
