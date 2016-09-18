@@ -1,4 +1,4 @@
-class AppController < ApplicatonController
+class AppController < ApplicationController
 	
 	def home
 	cookies.permanent[:stgr_cart] = Cart.create!
